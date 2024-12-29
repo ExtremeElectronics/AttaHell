@@ -6,16 +6,16 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
-add_executable(pipestrelle 
-            pipestrelle.c
+add_executable(attahell 
+            attahell.c
 )
 
-pico_enable_stdio_usb(pipestrelle 1)
-#pico_enable_stdio_uart(pipestrelle 1)
+pico_enable_stdio_usb(attahell 1)
+#pico_enable_stdio_uart(attahell 1)
 
-pico_add_extra_outputs(pipestrelle)
-target_include_directories(pipestrelle PRIVATE ${CMAKE_CURRENT_LIST_DIR} )
-target_link_libraries(pipestrelle 
+pico_add_extra_outputs(attahell)
+target_include_directories(attahell PRIVATE ${CMAKE_CURRENT_LIST_DIR} )
+target_link_libraries(attahell 
                 pico_stdlib
 		pico_multicore
 		hardware_spi
