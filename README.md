@@ -13,7 +13,7 @@ Calls are repeted every 1-2 seconds and indicated by the onboard LED
 
 Earthing GPIO10 slows down the output by 20x so the call can be heard in a human audio range. You will need to repleace the 40khz sounder above with a small speaker to hear this. 
 
-For testing Earthing GPIO6 and GPIO7 gives a good signal with a 40khz sounder. 
+For testing Earthing GPIO6 and GPIO7 gives a good signal with a 40khz sounder. As this is pure square wave its louder than the modulated signals above. Ideal for testing hetrodyne receivers.
 
 # NOT TO BE USED FOR ATTRACTING BATS # 
 Its illegal to simulate bat calls for attracting bats
