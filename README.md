@@ -16,4 +16,16 @@ Earthing GPIO10 slows down the output by 20x so the call can be heard in a human
 For testing Earthing GPIO6 and GPIO7 gives a good signal with a 40khz sounder. As this is pure square wave its louder than the modulated signals above. Ideal for testing hetrodyne receivers.
 
 # NOT TO BE USED FOR ATTRACTING BATS # 
-Its illegal to simulate bat calls for attracting bats
+It's illegal to simulate bat calls for attracting bats.
+
+Sounders tried 
+
+40khz transmitter (generic), OK but not very wide band
+
+https://rcl.lt/files/a37371507b9a8a701055?inline
+
+Tweeter, Better, but gives auidable harmonics?
+
+https://www.aliexpress.com/item/1005006896572004.html
+
+
