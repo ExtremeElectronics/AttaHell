@@ -83,12 +83,13 @@ void splash(){
     printf("\n                                                  ");
     printf("\n              Extreme Kits                      ");
     printf("\n              extkits.uk                        ");
+    printf("\n");
     printf("\n             /\\               /\\               ");
     printf("\n            /  \\             /  \\                   ");
     printf("\n           /____\\___________/____\\                ");
-    printf("\n          /     Pippestrelle      \\               ");
-    printf("\n         /                         \\              ");
-    printf("\n         ---------------------------              ");
+    printf("\n          /        AttaHell        \\               ");
+    printf("\n         /                          \\              ");
+    printf("\n         ----------------------------              ");
     printf("\n                                                  ");
     printf("\n      Copyright (c) 2024 Derek Woodroffe          ");
     printf("\n                %s  ",timecompiled);
@@ -123,7 +124,7 @@ int main() {
     while(1)
     {       
        PWMOn(0);
-       sleep_ms(900);
+       sleep_ms(1900);
        gpio_put(PICO_DEFAULT_LED_PIN, 1);
        if (DMADone()){
            int sn=GetSampNo();   
