@@ -1,9 +1,9 @@
 /*
- * Theremin
+ * AttaHell - Bat Caller
  *
- * https://github.com/ExtremeElectronics/Theremin
+ * https://github.com/ExtremeElectronics/AttaHell
  *
- * theremin.c
+ * attahell.c
  *
  * Copyright (c) 2024 Derek Woodroffe <tesla@extremeelectronics.co.uk>
  *
