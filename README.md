@@ -1,7 +1,7 @@
 # AttaHell
 Bat Call Simulator for Pi-pico and a 40khz Piezo sounder
 
-Intended use, testing Bat Listining devices.
+Intended use, testing Bat Listening devices.
 
 # NOT TO BE USED FOR ATTRACTING BATS # 
 It's illegal to simulate bat calls for attracting bats.
