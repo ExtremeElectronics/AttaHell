@@ -1,9 +1,9 @@
-# AttaHell
-Bat Call Simulator for Pi-pico and a 40khz Piezo sounder
+# AttaHell #
+## Bat Call Simulator for Pi-pico and a 40khz Piezo sounder ##
 
 Intended use, testing Bat Listening devices.
 
-# NOT TO BE USED FOR ATTRACTING BATS # 
+## NOT TO BE USED FOR ATTRACTING BATS ## 
 It's illegal to simulate bat calls for attracting bats.
 
 ## Operation ##
@@ -52,4 +52,7 @@ Tweeter, Better, but gives auidable harmonics?
 https://www.aliexpress.com/item/1005006896572004.html
 
 ## notes ##
-Currently Samples 7 8 & 9 appear to be corrupt :) 
+~~Currently Samples 7 8 & 9 appear to be corrupt :) ~~ Fixed maybe...
+Compiled with SDK1 - not tried SDK 2 yet. 
+
+
