@@ -1,6 +1,5 @@
 /**
- * https://github.com/ExtremeElectronics/pippestrelle
- *
+ * 
  * sound.c part of attahell
  * https://github.com/ExtremeElectronics/AttaHell
  *
@@ -24,6 +23,7 @@
 #include "../settings.h"
 
 #include "sample.c"
+#include "sample.h"
 
 //sound buffer
 //const uint8_t * bufferptr = &BatSounds[0];
@@ -146,10 +146,7 @@ void startDMA(int sample,int speed){
         dma_channel_configure(
             pwm_dma_chan1, &pwm_dma_chan1_config,
             &pwm_hw->slice[PWMslice1].cc, // Write to PWM counter compare
-            //BatSounds, // Read values from waveshapes
             BatArray[sample],
-            //BatSound4,
-      //      (uint32_t)SAMPLESIZE, // no values to stream
             BatLength[sample], // no values to stream
             false // Start.
         );
@@ -157,10 +154,7 @@ void startDMA(int sample,int speed){
         dma_channel_configure(
             pwm_dma_chan2, &pwm_dma_chan2_config,
             &pwm_hw->slice[PWMslice2].cc, // Write to PWM counter compare
-            //BatSounds, // Read values from waveshapes
-            //BatSound4,
             BatArray[sample],
-     //       (uint32_t)SAMPLESIZE, // no values to stream
             BatLength[sample], // no values to stream
             false // Start.
         );
@@ -179,8 +173,6 @@ int DMADone(void){
 }
 
 void init_sound(void){
-
-//    uint32_t f=FRAMERATE;
 
     ptimer1 = dma_claim_unused_timer(true /* required */);
     ptimer2 = dma_claim_unused_timer(true /* required */);
