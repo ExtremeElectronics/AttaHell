@@ -23,6 +23,8 @@ Details of the Calls are in the sound/sample.c
 
 GPIO16 & 17 pins have a 40khz unmodulated drive for a piezo, ideal for testing hetrodyne receivers (heard as a tone only)
 
+To halve the sound output if either of the above connect a speaker to one of the GPIO's above and GND
+
 Calls are repeted every 3-4 seconds and transmission is indicated by the Pico's onboard LED
 
 Earthing GPIO10 slows down the output by 20x so the call can be heard in a human audio range.  If you are using a 40khz sounder, you will need to repleace with a small speaker to hear this. 
@@ -43,4 +45,4 @@ Tweeter, Better, but gives auidable harmonics?
 https://www.aliexpress.com/item/1005006896572004.html
 
 ## notes ##
-Samples 7 8 & 9 appear to be corrupt :) 
+Currently Samples 7 8 & 9 appear to be corrupt :) 
