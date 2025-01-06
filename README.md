@@ -37,7 +37,7 @@ Earthing GPIO10 slows down the output by 20x so the call can be heard in a human
 As this is pure square wave its louder than the modulated signals above. Ideal for testing hetrodyne receivers.
 
 
-## hardware ##
+## Hardware ##
 
 Pico 1 and a sounder, yep thats it, no other connections needed. 
 
@@ -51,7 +51,7 @@ Tweeter, Better, but gives auidable harmonics?
 
 https://www.aliexpress.com/item/1005006896572004.html
 
-## notes ##
+## Notes ##
 ~~Currently Samples 7 8 & 9 appear to be corrupt :) ~~ Fixed maybe...
 Compiled with SDK1 - not tried SDK 2 yet. 
 
