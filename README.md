@@ -9,12 +9,14 @@ With No other connections the bat calls will rotate through each.
 The calls (10 currently) can be selected by grounding GPIO6 GPIO7 GPIO8 & GPIO9.
 Confusingly grounding a pin is seen as a 1, and the calls are numbered from 0
 
+
 |       | GPIO6    | GPIO7    | GPIO8    | GPIO9 |
-|Auto   | floating | floating | floating | floating |
-|Call 0 | Gnd      | floating | floating | floating |      
-|Call 1 | floating | Gnd      | floating | floating |
-|...    |          | | | |
-|Call 9 | floating | Gnd    | floating | Gnd |
+| Auto   | floating | floating | floating | floating |
+| Call 0 | Gnd      | floating | floating | floating |      
+| Call 1 | floating | Gnd      | floating | floating |
+| ...    |          | | | |
+| Call 9 | floating | Gnd    | floating | Gnd |
+
 
 Details of the Calls are in the sound/sample.c 
 
