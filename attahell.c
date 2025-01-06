@@ -26,6 +26,7 @@
 #include "settings.h"
 
 #include "sound/sound.h"
+#include "sound/sample.h"
 
 //#include "sound/sample.c"
 
@@ -48,12 +49,27 @@ char dtemp[100];
 
 char timecompiled[20];
 
+uint8_t nextsample=0;
+
+
 int GetSampNo(void){
     int r=0;
     if(gpio_get(ChSel0)==0)r+=1;
     if(gpio_get(ChSel1)==0)r+=2;
     if(gpio_get(ChSel2)==0)r+=3;
     if(gpio_get(ChSel3)==0)r+=8;
+    if (r>=MAXSAMPLES)r=0;
+    if(r==0){
+      r=nextsample; 
+      printf("Auto selecting sample %i\n",r);
+      nextsample++;
+      if(nextsample==MAXSAMPLES)nextsample=0;
+    }else{
+      r--;
+      printf("Switches set to sample %i\n",r);
+
+    }
+    
     return r;
 }
 
@@ -124,7 +140,7 @@ int main() {
     while(1)
     {       
        PWMOn(0);
-       sleep_ms(1900);
+       sleep_ms(2900);
        gpio_put(PICO_DEFAULT_LED_PIN, 1);
        if (DMADone()){
            int sn=GetSampNo();   
