@@ -34,6 +34,10 @@ As this is pure square wave its louder than the modulated signals above. Ideal f
 # NOT TO BE USED FOR ATTRACTING BATS # 
 It's illegal to simulate bat calls for attracting bats.
 
+## hardware ##
+
+Pico 1 and a sounder, yep thats it, no other connections needed. 
+
 Sounders tried 
 
 40khz transmitter (generic), OK but not very wide band
