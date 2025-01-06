@@ -11,6 +11,7 @@ Confusingly grounding a pin is seen as a 1, and the calls are numbered from 0
 
 
 |       | GPIO6    | GPIO7    | GPIO8    | GPIO9 |
+| ------ | -------- | -------- | -------- | -------- |
 | Auto   | floating | floating | floating | floating |
 | Call 0 | Gnd      | floating | floating | floating |      
 | Call 1 | floating | Gnd      | floating | floating |
