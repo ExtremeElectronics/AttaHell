@@ -3,6 +3,11 @@ Bat Call Simulator for Pi-pico and a 40khz Piezo sounder
 
 Intended use, testing Bat Listining devices.
 
+# NOT TO BE USED FOR ATTRACTING BATS # 
+It's illegal to simulate bat calls for attracting bats.
+
+## Operation ##
+
 Sends 325Khz samples/second encoded Bat calls to a Piezo Sounder connected between pins GPIO12 & GPIO14  
 With No other connections the bat calls will rotate through each. 
 
@@ -31,8 +36,6 @@ Earthing GPIO10 slows down the output by 20x so the call can be heard in a human
 
 As this is pure square wave its louder than the modulated signals above. Ideal for testing hetrodyne receivers.
 
-# NOT TO BE USED FOR ATTRACTING BATS # 
-It's illegal to simulate bat calls for attracting bats.
 
 ## hardware ##
 
