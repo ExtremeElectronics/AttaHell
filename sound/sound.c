@@ -1,7 +1,8 @@
 /**
  * https://github.com/ExtremeElectronics/pippestrelle
  *
- * sound.c
+ * sound.c part of attahell
+ * https://github.com/ExtremeElectronics/AttaHell
  *
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -139,6 +140,8 @@ void startDMA(int sample,int speed){
 
         dma_timer_set_fraction(ptimer1, 1, dmafreq);  
         dma_timer_set_fraction(ptimer2, 1, dmafreq);  
+
+//        printf("DMA Freq %f\n",(float)PICOCLOCK*1000/dmafreq);
 
         dma_channel_configure(
             pwm_dma_chan1, &pwm_dma_chan1_config,
