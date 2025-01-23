@@ -135,7 +135,7 @@ void startDMA(int sample,int speed){
             f=f/20;        
         }
 
-        printf("Sample %i, Rate %i, (Div %i)\n",sample,f,speed*20);
+        printf("Sample %i, Rate %i, (Div %i), %s\n\n",sample,f,speed*20,BatNames[sample]);
         uint32_t dmafreq=PICOCLOCK*1000/f;
 
         dma_timer_set_fraction(ptimer1, 1, dmafreq);  
@@ -148,7 +148,7 @@ void startDMA(int sample,int speed){
             &pwm_hw->slice[PWMslice1].cc, // Write to PWM counter compare
             BatArray[sample],
             BatLength[sample], // no values to stream
-            false // Start.
+            false // Don't Start.
         );
 
         dma_channel_configure(
@@ -156,7 +156,7 @@ void startDMA(int sample,int speed){
             &pwm_hw->slice[PWMslice2].cc, // Write to PWM counter compare
             BatArray[sample],
             BatLength[sample], // no values to stream
-            false // Start.
+            false // Don't Start.
         );
 
         //start DMA's
