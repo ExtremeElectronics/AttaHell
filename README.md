@@ -4,37 +4,38 @@
 Intended use, testing Bat Listening devices.
 
 ## NOT TO BE USED FOR ATTRACTING BATS ## 
-It's illegal to simulate bat calls for attracting bats.
+It's illegal (in most countries) to simulate bat calls for attracting bats, without special permission.
+
+
+## Connections ##
+
+Sounder across GPIO 14 and GPIO 12 - See hardware for details.
+Button on GPIO 6 to GND (optional)
+Switch or shorting link on GPIO 10 to GND (optional)
+LED on GPIO 9 to GND (optional)
+
 
 ## Operation ##
 
 Sends 325Khz samples/second encoded Bat calls to a Piezo Sounder connected between pins GPIO12 & GPIO14  
 With No other connections the bat calls will rotate through each. 
 
-The calls (10 currently) can be selected by grounding GPIO6 GPIO7 GPIO8 & GPIO9.
-Confusingly grounding a pin is seen as a 1, and the calls are numbered from 0
-
-
-|       | GPIO6    | GPIO7    | GPIO8    | GPIO9 |
-| ------ | -------- | -------- | -------- | -------- |
-| Auto   | floating | floating | floating | floating |
-| Call 0 | Gnd      | floating | floating | floating |      
-| Call 1 | floating | Gnd      | floating | floating |
-| ...    |          | | | |
-| Call 9 | floating | Gnd    | floating | Gnd |
-
+The calls are now selected with a single button on GPIO 6 to Gnd.
+At startup the calls cycle through automatically.
+To Select a call, press the button, each press will cycle through to the next call, after the playing one has stopped, That call will then repeat. 
+To restore Auto, reset, or re-apply power to the pico.
 
 Details of the Calls are in the sound/sample.c 
 
 GPIO16 & 17 pins have a 40khz unmodulated drive for a piezo, ideal for testing hetrodyne receivers (heard as a tone only)
 
-To halve the sound output if either of the above connect a speaker to one of the GPIO's above and GND
+To halve the sound output level of either of the above outputs connect the sounder to only one of the GPIO's above and GND
 
-Calls are repeted every 3-4 seconds and transmission is indicated by the Pico's onboard LED
+Calls are repeted every 3-4 seconds and transmission is indicated by the LED on GPIO 9
 
 Earthing GPIO10 slows down the output by 20x so the call can be heard in a human audio range.  If you are using a 40khz sounder, you will need to repleace with a small speaker to hear this. 
 
-As this is pure square wave its louder than the modulated signals above. Ideal for testing hetrodyne receivers.
+As this is pure square wave its louder than the modulated signals above. Ideal for testing hetrodyne receivers. (especially deaf ones)
 
 
 ## Hardware ##
@@ -52,7 +53,6 @@ Tweeter, Better, but gives auidable harmonics?
 https://www.aliexpress.com/item/1005006896572004.html
 
 ## Notes ##
-~~Currently Samples 7 8 & 9 appear to be corrupt :) ~~ Fixed maybe...
 Compiled with SDK1 - not tried SDK 2 yet. 
 
 
