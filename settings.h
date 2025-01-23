@@ -12,12 +12,14 @@
 //over clock speed
 #define PICOCLOCK 250000 
 
-//ChSel's
-#define ChSel0 6
-#define ChSel1 7
-#define ChSel2 8
-#define ChSel3 9
+//Buttons
+#define Button 6
+//#define ChSel0 6
+//#define ChSel1 7
+//#define ChSel2 8
+//#define ChSel3 9
+
+#define LEDPIN 9
 
 //speed
-
-#define ChSpeed 10
+#define ChSpeed 13

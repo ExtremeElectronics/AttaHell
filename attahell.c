@@ -5,7 +5,7 @@
  *
  * attahell.c
  *
- * Copyright (c) 2024 Derek Woodroffe <tesla@extremeelectronics.co.uk>
+ * Copyright (c) 2025 Derek Woodroffe <tesla@extremeelectronics.co.uk>
  *
  * SPDX-License-Identifier: BSD-3-Clause
 */
@@ -43,15 +43,21 @@ uint8_t extern mute;
 uint8_t extern vmute;
 uint8_t extern fmute;
 int8_t wave=0; //from table in waveshapes.c
-struct repeating_timer ftimer;
 
 char dtemp[100];
 
 char timecompiled[20];
 
 uint8_t nextsample=0;
+uint8_t autosample=1;
 
+//button timer
+struct repeating_timer btimer;
+int lb=0;//debounce
 
+int sb;//sample by button
+
+/*
 int GetSampNo(void){
     int r=0;
     if(gpio_get(ChSel0)==0)r+=1;
@@ -72,9 +78,51 @@ int GetSampNo(void){
     
     return r;
 }
+*/
+
+
+bool Button_Callback(struct repeating_timer *t){
+    if(gpio_get(Button)==0){
+      gpio_put(PICO_DEFAULT_LED_PIN, 0);
+      if(lb==0){
+        gpio_put(PICO_DEFAULT_LED_PIN, 1);
+        sb=sb+1;
+      }  
+      lb=1;
+      if (sb==MAXSAMPLES) sb=0;
+      //stop auto selecting samples
+      autosample=0;
+    }else{
+      lb=0;
+    }
+    return true; //keep going       
+}
+
+int GetSampNo(void){
+    int r=0;
+
+//    if (r>=MAXSAMPLES)r=0;
+    if(autosample==1){
+      r=nextsample;
+      printf("Auto selecting sample %i\n",r);
+      nextsample++;
+      if(nextsample==MAXSAMPLES)nextsample=0;
+    }else{
+       //selection from buttons
+       printf("Button Sample %i\n",sb);
+       r=sb;
+    }
+
+    return r;
+}
+
+
 
 void gpio_conf(){
-    gpio_set_dir(ChSel0, GPIO_IN);
+    gpio_set_dir(Button, GPIO_IN);
+    gpio_pull_up(Button);
+    
+/*    gpio_set_dir(ChSel0, GPIO_IN);
     gpio_pull_up(ChSel0);
     
     gpio_set_dir(ChSel1, GPIO_IN);
@@ -85,9 +133,12 @@ void gpio_conf(){
     
     gpio_set_dir(ChSel3, GPIO_IN);
     gpio_pull_up(ChSel3);
-
+*/
     gpio_set_dir(ChSpeed, GPIO_IN);
     gpio_pull_up(ChSpeed);
+
+    gpio_set_dir(LEDPIN, GPIO_OUT);
+    
     
 }
 
@@ -107,7 +158,7 @@ void splash(){
     printf("\n         /                          \\              ");
     printf("\n         ----------------------------              ");
     printf("\n                                                  ");
-    printf("\n      Copyright (c) 2024 Derek Woodroffe          ");
+    printf("\n      Copyright (c) 2025 Derek Woodroffe          ");
     printf("\n                %s  ",timecompiled);
     printf("\n\n");  
         
@@ -120,6 +171,8 @@ void splash(){
 
 // ******************************** Main ************************************
 int main() {
+
+
     set_sys_clock_khz(PICOCLOCK, false);
     stdio_init_all();
 
@@ -131,6 +184,10 @@ int main() {
     SetPWM2();
     init_sound();
 
+    printf("Starting Button timer\n");
+    add_repeating_timer_ms( 50, Button_Callback, NULL, &btimer); //
+    
+
     printf("**************** STARTING **************** \n\n");
 
    //FLASH LED
@@ -141,7 +198,7 @@ int main() {
     {       
        PWMOn(0);
        sleep_ms(2900);
-       gpio_put(PICO_DEFAULT_LED_PIN, 1);
+       gpio_put(LEDPIN, 1);
        if (DMADone()){
            int sn=GetSampNo();   
            int sp=(gpio_get(ChSpeed)==0);
@@ -149,7 +206,7 @@ int main() {
        }
        PWMOn(1);
        sleep_ms(100);
-       gpio_put(PICO_DEFAULT_LED_PIN, 0);
+       gpio_put(LEDPIN, 0);
        printf(".");
     } 
 }
