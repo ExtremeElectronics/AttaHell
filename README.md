@@ -1,7 +1,11 @@
 # AttaHell #
 ## Bat Call Simulator for Pi-pico and a 40khz Piezo sounder ##
 
-Intended use, testing Bat Listening devices.
+Intended use - testing Bat Listener / Detector devices.
+
+The Attahell will emit ultrasonic bat calls of varying species via a speaker or ultrasonic transducer. 
+
+Designed to be VERY simple to construct and use as a quick test.
 
 ## NOT TO BE USED FOR ATTRACTING BATS ## 
 It's illegal (in most countries) to simulate bat calls for attracting bats, without special permission.
