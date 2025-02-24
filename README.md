@@ -63,4 +63,4 @@ Compiled with SDK1 - not tried SDK 2 yet.
 This was created for the development of Bat Ears an easy to build full featured PiPico based Bat Listener/Detector
 https://extkits.co.uk/product/bat-ears-bat-detector/
 
-![Uploading 20250222_105222.jpg…]()
+![20250222_105222](https://github.com/user-attachments/assets/fc354019-bebe-4b4f-8d34-88982bd66b75)
