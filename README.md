@@ -48,7 +48,7 @@ Pico 1 and a sounder, yep thats it, no other connections needed.
 
 ## Circuit ##
 
-![Attahell Circuit](https://github.com/user-attachments/assets/9d5a2f85-013b-4440-9f95-2321e444d520)
+![Attahell Circuit](https://github.com/user-attachments/assets/9d5a2f85-013b-4440-9f95-2321e444d520| height = 500px)
 
 
 ## Sounders tried ##
