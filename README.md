@@ -46,7 +46,12 @@ As this is pure square wave its louder than the modulated signals above. Ideal f
 
 Pico 1 and a sounder, yep thats it, no other connections needed. 
 
-Sounders tried 
+## Circuit ##
+
+![Attahell Circuit](https://github.com/user-attachments/assets/9d5a2f85-013b-4440-9f95-2321e444d520)
+
+
+## Sounders tried ##
 
 40khz transmitter (generic), OK but not very wide band
 
